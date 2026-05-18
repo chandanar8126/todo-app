@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    --primary1: #3b82f6;
+    --primary2: #06b6d4;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #111827
+        );
+
+    transition: 0.5s;
+}
+
+.container {
+
+    width: 520px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(20px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow:
+        0 0 30px rgba(0,0,0,0.4);
+
+    animation: fadeIn 1s ease;
+}
+
+.top-section {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.top-section h1 {
+
+    color: white;
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+.top-section p {
+
+    color: #94a3b8;
+
+    font-size: 15px;
+}
+
+.quote-box {
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+.theme-buttons {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.theme-buttons button {
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.theme-buttons button:hover {
+
+    transform: scale(1.1);
+}
+
+.color-palette {
+
+    margin-top: 20px;
+
+    display: none;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.color {
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    border: 3px solid white;
+}
+
+.color:hover {
+
+    transform: scale(1.2);
+}
+
+.color1 {
+    background: linear-gradient(45deg, #3b82f6, #06b6d4);
+}
+
+.color2 {
+    background: linear-gradient(45deg, #ec4899, #8b5cf6);
+}
+
+.color3 {
+    background: linear-gradient(45deg, #10b981, #14b8a6);
+}
+
+.color4 {
+    background: linear-gradient(45deg, #f97316, #ef4444);
+}
+
+.color5 {
+    background: linear-gradient(45deg, #eab308, #f59e0b);
+}
+
+.input-section {
+
+    margin-bottom: 30px;
+}
+
+.input-box {
+
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+.input-box i {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 15px;
+
+    color: #94a3b8;
+}
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 15px 15px 15px 45px;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+
+    border: 1px solid var(--primary1);
+
+    box-shadow: 0 0 15px var(--primary1);
+}
+
+textarea {
+
+    resize: none;
+
+    height: 90px;
+}
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #94a3b8;
+}
+
+button {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background:
+        linear-gradient(
+            45deg,
+            var(--primary1),
+            var(--primary2)
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 15px var(--primary1);
+}
+
+.task-header {
+
+    margin-bottom: 15px;
+}
+
+.task-header h2 {
+
+    color: white;
+}
+
+.task {
+
+    background: rgba(255,255,255,0.07);
+
+    padding: 20px;
+
+    border-radius: 18px;
+
+    margin-top: 18px;
+
+    border-left: 5px solid var(--primary1);
+
+    animation: slideUp 0.5s ease;
+}
+
+.task:hover {
+
+    transform: translateY(-4px);
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.15);
+}
+
+.task h3 {
+
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.task p {
+
+    color: #cbd5e1;
+
+    margin-bottom: 15px;
+
+    line-height: 1.5;
+}
+
+.completed {
+
+    text-decoration: line-through;
+
+    opacity: 0.6;
+}
+
+.task button {
+
+    width: auto;
+
+    padding: 10px 14px;
+
+    margin-right: 10px;
+
+    font-size: 14px;
+
+    margin-top: 5px;
+}
+
+.light-theme {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8fafc,
+            #e2e8f0
+        );
+}
+
+.light-theme .container {
+
+    background: rgba(255,255,255,0.8);
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme .task h3 {
+
+    color: black;
+}
+
+.light-theme p,
+.light-theme .task p,
+.light-theme .quote-box {
+
+    color: #333;
+}
+
+.light-theme input,
+.light-theme textarea {
+
+    background: rgba(255,255,255,0.9);
+
+    color: black;
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: scale(0.9);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* PROGRESS BAR */
+
+.progress-container {
+
+    margin-top: 15px;
+}
+
+.progress-info {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    color: white;
+
+    font-size: 14px;
+}
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.1);
+
+    overflow: hidden;
+}
+
+.progress-fill {
+
+    height: 100%;
+
+    width: 0%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            45deg,
+            var(--primary1),
+            var(--primary2)
+        );
+
+    transition: 0.5s;
+}
+
+.light-theme .progress-info {
+
+    color: black;
+}
+
+/* SEARCH BOX */
+
+.search-box {
+
+    position: relative;
+
+    margin-bottom: 25px;
+}
+
+.search-box i {
+
+    position: absolute;
+
+    top: 18px;
+
+    left: 15px;
+
+    color: #94a3b8;
+}
+
+.search-box input {
+
+    width: 100%;
+
+    padding: 15px 15px 15px 45px;
+
+    border-radius: 15px;
+
+    border: none;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    font-size: 15px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.light-theme .search-box input {
+
+    color: black;
+
+    background: rgba(255,255,255,0.9);
+}
+

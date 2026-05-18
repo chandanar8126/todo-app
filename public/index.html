@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="top-section">
+
+            <h1>
+                <i class="fa-solid fa-list-check"></i>
+                Task Manager
+            </h1>
+
+            <p>
+                Organize your daily work efficiently
+            </p>
+
+            <div class="quote-box">
+
+                <i class="fa-solid fa-quote-left"></i>
+
+                <span id="quote"></span>
+
+            </div>
+
+            <div class="theme-buttons">
+
+                <button onclick="setTheme('dark')">
+                    🌙
+                </button>
+
+                <button onclick="setTheme('light')">
+                    ☀️
+                </button>
+
+                <button onclick="togglePalette()">
+                    🎨
+                </button>
+
+            </div>
+
+            <div class="color-palette" id="palette">
+
+                <div
+                    class="color color1"
+                    onclick="setCustomTheme('#3b82f6', '#06b6d4')"
+                ></div>
+
+                <div
+                    class="color color2"
+                    onclick="setCustomTheme('#ec4899', '#8b5cf6')"
+                ></div>
+
+                <div
+                    class="color color3"
+                    onclick="setCustomTheme('#10b981', '#14b8a6')"
+                ></div>
+
+                <div
+                    class="color color4"
+                    onclick="setCustomTheme('#f97316', '#ef4444')"
+                ></div>
+
+                <div
+                    class="color color5"
+                    onclick="setCustomTheme('#eab308', '#f59e0b')"
+                ></div>
+
+            </div>
+
+        </div>
+
+        <div class="input-section">
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-pen"></i>
+
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="Enter task name"
+                >
+
+            </div>
+
+            <div class="input-box">
+
+                <i class="fa-solid fa-align-left"></i>
+
+                <textarea
+                    id="taskDescription"
+                    placeholder="Enter task description"
+                ></textarea>
+
+            </div>
+
+            <button onclick="addTask()">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Add Task
+
+            </button>
+
+        </div>
+
+        <div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search tasks..."
+        onkeyup="searchTasks()"
+    >
+
+</div>
+
+        <div class="task-header">
+
+    <h2>My Tasks</h2>
+
+    <div class="progress-container">
+
+        <div class="progress-info">
+
+            <span id="taskCount">
+                0 Tasks
+            </span>
+
+            <span id="taskPercent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+
+            <div
+                class="progress-fill"
+                id="progressFill"
+            ></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+        <div id="taskList"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
